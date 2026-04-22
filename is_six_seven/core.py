@@ -14,6 +14,9 @@ class Number:
         self.could = self
         self.may = self
         self.might = self
+        self.able = self
+        self.going = self
+        self.to = self
         
         # self.NOT = self(isNot = not self.__isNot)
         # RecursionError
@@ -35,14 +38,18 @@ class Number:
         return Number(number=self.__number, isQuestion=self.__isQuestion, isNot="Yes" if self.__isNot=="No" else "No")
 
     def is_six_seven(self) -> bool | Number:
-        if self.__isQuestion == "Yes": return self.__returnBool(self.__number == 67 or self.__number == -67)
+        if self.__isQuestion == "Yes":
+            if self.__isNot == "Yes": return self.__returnBool(not(self.__number == 67 or self.__number == -67))
+            else: return self.__returnBool(self.__number == 67 or self.__number == -67)
         else: return Number(67)
     # def is_six(self) -> bool: return self.__returnBool(self.number == 6)
     # def is_seven(self) -> bool: return self.__returnBool(self.number == 7)
 
     # Number(4).must.be.six_seven()
     def six_seven(self) -> bool | Number:
-        if self.__isQuestion == "Yes": return self.__returnBool(self.__number == 67 or self.__number == -67)
+        if self.__isQuestion == "Yes":
+            if self.__isNot == "Yes": return self.__returnBool(not(self.__number == 67 or self.__number == -67))
+            else: return self.__returnBool(self.__number == 67 or self.__number == -67)
         else:
             if self.__isNot == "Yes": raise Exception("Then why do you use this?")
             else: return Number(67)
