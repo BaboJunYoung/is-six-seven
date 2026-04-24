@@ -22,8 +22,10 @@ class Number:
         # RecursionError
         # self.NOT = Number(number=self.__number, isQuestion=self.__isQuestion, isNot="Yes" if self.__isNot=="No" else "No")
         self.be = self
-        self.are = self
         self.am = self
+        self.IS = self
+        self.Is = self
+        self.are = self
     @property
     def will(self):
         return Number(number=self.__number, isQuestion="No", isNot=self.__isNot)
@@ -93,7 +95,7 @@ class Number:
         return str(self.__number)
 
     def __int__(self) -> int:
-        return self.__number
+        return int(self.__number)
 
     def __add__(self, other):
         # if isinstance(other, Number): value = self.__number + other.number
@@ -152,7 +154,7 @@ class Number:
     def __lt__(self, other):
         if isinstance(other, Number): value = self.__number < other.number
         else: value = self.__returnBool(self.__number < other)
-
+        print(f"value = {value}")
         return value
     def __le__(self, other):
         if isinstance(other, Number): value = self.__number <= other.number

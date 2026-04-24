@@ -1,29 +1,12 @@
 from is_six_seven import Number
 
-num = Number(66)
-num = num.plus(2)
-num = num.minus(1)
-print(num)
-print(num.may.be.six_seven()) # Yes
-print()
-try:
-    num = num + 1
-except Exception as e:
-    print("ERROR!!!")
-    print(f"Exception: {e}")
-print()
+age = Number(int(input("Input your age: ")))
 
-import random
+adult_flag = True
+for teen in range(67 - 0, 67 - 20, -1):
+    if age.plus(teen).IS.six_seven() == "Yes":
+        print("You are not adult.")
+        adult_flag = False
 
-rand = Number(random.randint(60, 70))
-
-print(f"rand = {rand}")
-
-if rand.am.six_seven() == "No":
-    print(f"Oh... no... it's not 67. It's {rand}")
-    print("But I can make it 67")
-    rand = rand.must.be.six_seven()
-    print(f"Now, it is {rand}\n")
-
-if rand.are.six_seven() == "Yes":
-    print("AYYYYYY! AY!!!!! SIX SEVEN!!!!!!!!!!")
+if adult_flag:
+    print("You are adult. You can enter.")
